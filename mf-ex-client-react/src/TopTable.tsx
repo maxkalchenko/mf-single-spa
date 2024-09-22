@@ -9,10 +9,9 @@ import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
 import './App.css';
 import { httpGet } from '@maxkalchenko/utils';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'; // makeStyles
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
-const theme = createMuiTheme();
-// @emotion/react @emotion/styled @material-ui/core @mui/icons-material @mui/material
+const theme = createTheme();
 
 function App() {
   const [drivers, setDrivers] = React.useState([]);
@@ -23,13 +22,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <h2>Top Drivers</h2>
+      <h2>Top Users</h2>
       <TableContainer component={Paper}>
         <Table aria-label='simple table'>
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell align='right'>License plate</TableCell>
+              <TableCell align='right'>License</TableCell>
               <TableCell align='right'>Score</TableCell>
             </TableRow>
           </TableHead>

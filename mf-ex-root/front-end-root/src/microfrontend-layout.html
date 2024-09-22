@@ -5,21 +5,19 @@
     See https://single-spa.js.org/docs/layout-definition/ for more information.
 
   -->
-  <main>
-    <!--
-      <route default>
-        <application name="@single-spa/welcome"></application>
-      </route>
-    -->
-    <application name="@maxkalchenko/top-bar"></application>
+  <main class="container">
+    <!-- Topbar -->
+    <div class="topbar">
+      <application name="@maxkalchenko/top-bar"></application>
+    </div>
 
-    <!-- 56px -->
-    <div id='body-wrapper'>
-      <div style="width: 300px;">
+    <!-- Content area with sidebar and main content -->
+    <div class="content-area">
+      <div class="sidebar">
         <application name="@maxkalchenko/navigation"></application>
       </div>
 
-      <div style="width: 100%; margin: 32px;">
+      <div class="main-content">
         <route path="react">
           <application name="@maxkalchenko/mf-ex-client-react"></application>
         </route>
@@ -31,7 +29,7 @@
         <route path="angular">
           <application name="mf-ex-client-angular"></application>
         </route>
-      </div>  
+      </div>
     </div>
   </main>
 </single-spa-router>

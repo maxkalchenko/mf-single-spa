@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -20,13 +20,19 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    if (window.location.pathname === '/react/top') {
+      setValue(1);
+    }
+  }, []);
+
   return (
     <Router>
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={value} onChange={handleChange} aria-label='basic tabs example'>
-            <Tab label='All drivers' {...a11yProps(0)} component={Link} to={'/react/'} />
-            <Tab label='Top drivers' {...a11yProps(1)} component={Link} to={'/react/top'} />
+            <Tab label='All users' {...a11yProps(0)} component={Link} to={'/react/'} />
+            <Tab label='Top users' {...a11yProps(1)} component={Link} to={'/react/top'} />
           </Tabs>
         </Box>
 

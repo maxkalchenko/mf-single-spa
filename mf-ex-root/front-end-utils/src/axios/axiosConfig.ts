@@ -10,20 +10,6 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.common['Accept'] = REQUEST_ACCEPT;
 axios.defaults.headers.post['Content-Type'] = REQUEST_CONTENT_TYPE;
 
-// // if you need to cancel request on some cancelRequestCondition
-// axios.interceptors.request.use(config => {
-//   const controller = new AbortController();
-
-//   if (cancelRequestCondition) {
-//     controller.abort();
-//   }
-
-//   return {
-//     ...config,
-//     signal: controller.signal
-//   };
-// });
-
 axios.interceptors.response.use(
   response => (response && response.data ? response.data : response),
   error => {
@@ -31,7 +17,6 @@ axios.interceptors.response.use(
       window.location.href = RELOGIN_URL;
     }
 
-    // return Promise.resolve({ data: "Test error!"});
     return Promise.reject(error);
   },
 );

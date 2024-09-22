@@ -31,20 +31,39 @@ $maxWidthMobile: 768px;
   display: flex;
 }
 
-#sidebar-nav-expanded {
-  background-color: #FAFAFA;
-  padding: 16px;
-  border-right: 1px solid #0000000A;
-  height: 100vh;
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-// mobile styles
-@media (max-width: $maxWidthMobile) {
-  #body-wrapper {
-    flex-direction: column;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+}
 
-  #sidebar-nav-expanded {
-    width: 100vw;
+.topbar {
+  display: block;
+}
+
+.content-area {
+  display: flex;
+  flex-grow: 1; /* Allow the content area to expand */
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 16px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex-grow: 1; /* Allow the main content to fill the remaining space */
+  background-color: #fff;
+  padding: 32px;
+  width: 100%;
+  overflow-y: auto;
+
+  @media screen and (max-width: $maxWidthMobile) {
+    padding: 4px;
   }
 }
