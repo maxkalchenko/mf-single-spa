@@ -1,5 +1,5 @@
 {
-  "name": "be-taxi",
+  "name": "be-react",
   "version": "1.0.0",
   "description": "A simple backend example built with Express.js",
   "main": "app.js",

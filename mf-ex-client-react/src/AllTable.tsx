@@ -16,7 +16,7 @@ function App() {
   const [drivers, setDrivers] = React.useState([]);
 
   useEffect(() => {
-    httpGet('taxi').then(setDrivers);
+    httpGet('react').then(setDrivers);
   }, []);
 
   return (

@@ -14,7 +14,7 @@ module.exports = (webpackConfigEnv, argv) => {
     // modify the webpack config however you'd like to by adding to this object
     devServer: {
       proxy: {
-        '/api/taxi': {
+        '/api/react': {
           target: 'http://localhost:3000',
           router: () => 'http://localhost:5005',
           logLevel: 'debug' /*optional*/,

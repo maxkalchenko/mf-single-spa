@@ -5,5 +5,8 @@ module.exports = defineConfig({
         output: {
             libraryTarget: "system",
         },
+        externals: {
+          '@maxkalchenko/utils': '@maxkalchenko/utils'
+        }
     },
 });
