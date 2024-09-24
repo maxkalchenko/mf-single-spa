@@ -3,6 +3,14 @@ const singleSpaAngularWebpack = require('single-spa-angular/lib/webpack').defaul
 module.exports = (config, options) => {
   const singleSpaWebpackConfig = singleSpaAngularWebpack(config, options);
 
-  // Feel free to modify this webpack config however you'd like to
+  // Modify the output configuration
+  singleSpaWebpackConfig.output.libraryTarget = 'system';
+
+  // Set up externals
+  singleSpaWebpackConfig.externals = {
+    '@maxkalchenko/utils': '@maxkalchenko/utils', // Mark as external
+    ...singleSpaWebpackConfig.externals, // Preserve other externals
+  };
+
   return singleSpaWebpackConfig;
 };

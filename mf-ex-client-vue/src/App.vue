@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/logo.png" height="100px">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <table v-if="data.length">
+    <table v-if="data.length" class="vue">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Driver Name</th>
-          <th>License Plate</th>
-          <th>Status</th>
+          <th class="vue">ID</th>
+          <th class="vue">Name</th>
+          <th class="vue">License</th>
+          <th class="vue">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="item in data" :key="item.id">
-          <td>{{ item.id }}</td>
-          <td>{{ item.driverName }}</td>
-          <td>{{ item.licensePlate }}</td>
-          <td>{{ item.status }}</td>
+          <td class="vue">{{ item.id }}</td>
+          <td class="vue">{{ item.name }}</td>
+          <td class="vue">{{ item.number }}</td>
+          <td class="vue">{{ item.status }}</td>
         </tr>
       </tbody>
     </table>
@@ -55,26 +55,18 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-table {
+table.vue {
   margin: 20px auto;
   border-collapse: collapse;
+  width: 100%;
 }
 
-th, td {
+th.vue, td.vue {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-th {
+th.vue {
   background-color: #f2f2f2;
 }
 </style>

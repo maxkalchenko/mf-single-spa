@@ -36,9 +36,9 @@ function App() {
             {drivers.map(row => (
               <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                 <TableCell component='th' scope='row'>
-                  {row.driverName}
+                  {row.name}
                 </TableCell>
-                <TableCell align='right'>{row.licensePlate}</TableCell>
+                <TableCell align='right'>{row.number}</TableCell>
                 <TableCell align='right'>
                   <Rating name='half-rating-read' defaultValue={row.score} precision={0.1} readOnly />
                 </TableCell>
